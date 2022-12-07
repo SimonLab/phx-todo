@@ -1,12 +1,10 @@
 name: Run Script
-on: [push]
-env:
-  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+on: push
 jobs:
   run-example-script:
+    name: Run Script 
     runs-on: ubuntu-latest
     steps:
-      - name: Run Example script
-        run: ./.github/scripts/my-script.sh
-        shell: bash
+      - uses: actions/checkout@v3
+      - run: ./.github/scripts/my-script.sh
 
