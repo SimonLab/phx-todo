@@ -1,0 +1,10 @@
+name: Run Script
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+jobs:
+  run-example-script:
+      steps:
+        - name: Run Example script
+          run: ./.github/workflow/my-script.sh
+          shell: bash
+
