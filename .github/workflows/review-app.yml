@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Example script
-        run: ./.github/workflows/my-script.sh
+        run: ./.github/scripts/my-script.sh
         shell: bash
 
