@@ -1,10 +1,14 @@
 name: Run Script
 on: push
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
   run-example-script:
     name: Run Script 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install flyctl
+        run: curl -L https://fly.io/install.sh | FLYCTL_INSTALL=/usr/local sh
       - run: ./.github/scripts/my-script.sh
 
